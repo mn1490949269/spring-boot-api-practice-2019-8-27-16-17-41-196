@@ -6,6 +6,9 @@ public class Company {
 	private String companyName;
 	private int employeesNumber;
 	private List<Employee> employees;
+	public Company() {
+		super();
+	}
 	public Company(String companyName, int employeesNumber, List<Employee> employees) {
 		super();
 		this.companyName = companyName;

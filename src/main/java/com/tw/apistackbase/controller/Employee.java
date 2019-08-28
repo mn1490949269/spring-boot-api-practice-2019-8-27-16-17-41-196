@@ -12,6 +12,11 @@ public class Employee {
 	private int salary;
 	
 	
+	public Employee() {
+		super();
+	}
+
+
 	public Employee(int id, String name, int age, String gender, int salary) {
 		super();
 		this.id = id;
