@@ -39,9 +39,18 @@ public class CompanyService {
 	}
 	
 	public Company addCompany(Company company) {
-		Company companyRtn = company;
 		companies.add(company);
-		return companyRtn;			
+		return company;			
+	}
+
+	public Company updateCompany(Company company) {
+		Company companyRtn = new Company();
+		for(Company item: companies) {
+			if(item.getCompanyName() == company.getCompanyName()) {
+				companyRtn = company;
+			}
+		}
+		return companyRtn;	
 	}
 	
 	
