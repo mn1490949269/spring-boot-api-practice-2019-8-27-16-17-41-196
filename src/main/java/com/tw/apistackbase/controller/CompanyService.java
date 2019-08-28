@@ -52,6 +52,18 @@ public class CompanyService {
 		}
 		return companyRtn;	
 	}
+
+	public Boolean deleteCompany(Company company) {
+		Boolean flag = false;
+		for(Company item: companies) {
+			if(item.getCompanyName() == company.getCompanyName()) {
+				companies.remove(company);
+				flag = true;
+			}
+		}
+		return flag;	
+		
+	}
 	
 	
 }
