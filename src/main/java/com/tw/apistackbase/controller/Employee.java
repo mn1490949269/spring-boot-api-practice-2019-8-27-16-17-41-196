@@ -11,7 +11,6 @@ public class Employee {
 	private String gender;
 	private int salary;
 	
-	
 	public Employee() {
 		super();
 	}

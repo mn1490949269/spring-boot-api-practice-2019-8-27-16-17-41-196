@@ -3,11 +3,12 @@ package com.tw.apistackbase.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.validator.internal.util.privilegedactions.NewInstance;
+
 import org.springframework.stereotype.Service;
 
 @Service
 public class CompanyService {
+	
 	private static List<Employee>  employees = new ArrayList<Employee>() {
 		{
 			add(new Employee(1, "xiaohong", 20, "female", 7000));
@@ -32,7 +33,7 @@ public class CompanyService {
 	
 		for(Company item: companies) {
 			if(item.getCompanyName() == companyname) {
-				employeeList = item.getEmployees();
+				employeeList.addAll(item.getEmployees());
 			}
 		}			
 		return employeeList;		

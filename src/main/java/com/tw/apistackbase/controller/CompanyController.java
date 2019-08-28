@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/companies")
 public class CompanyController {
+	
 	@Autowired
 	private CompanyService companyService;
 
@@ -30,23 +31,19 @@ public class CompanyController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Company> addUser(@RequestBody Company company) {
+	public ResponseEntity<Company> addCompany(@RequestBody Company company) {
 		companyService.addCompany(company);
 		return ResponseEntity.status(HttpStatus.CREATED).build();
 	}
-	@PutMapping
+	@PutMapping("/1")
 	public ResponseEntity<Company> updateCompany(Company company){
 		companyService.updateCompany(company);
 		return ResponseEntity.status(HttpStatus.OK).build();
 	}
-	@DeleteMapping
+	@DeleteMapping("/1")
 	public ResponseEntity<Boolean> deleteCompany(Company company){
 		companyService.deleteCompany(company);
 		return ResponseEntity.status(HttpStatus.OK).build();
-	}
-	
-	
-
-	
+	}	
 
 }
